@@ -1,21 +1,15 @@
-import sympy as sp
+from Crypto.Util.number import long_to_bytes as l2b, getPrime, bytes_to_long as b2l, inverse
 
-# Define the given values
-a = 183170230465848410077175594145038110799
-b = 177960951503783858139483105160729532851
-c = 241771663291314104599898559749454094799
-y = 81883801483428304918741984834363388238539421922474300691841915944763281416203781633389084991872486015041884084357260412052258732056118424392145242000539134316390251752292462492913837148154805999331901388735321855253311517735430229163344305926114721299791844599487270387540543138183327842649901510556454592197
+flag = open('flag.txt', 'rb').read()
+x = b2l(flag)
 
-# Define the variable
-x = sp.symbols('x')
+p = getPrime(1024)
+a, b, c = getPrime(128), getPrime(128), getPrime(128)
 
-# Create the quadratic equation
-quadratic_eq = a * x**2 + b * x + c - y
-
-# Solve the equation for x
-solutions = sp.solve(quadratic_eq, x)
-
-# Display the solutions
-print("Solutions for x:")
-for sol in solutions:
-    print(sol)
+y = (a*(x**2) + b*x + c) % p
+with open('out.txt', 'w') as f:
+ f.write(f"p = {p}\n")
+ f.write(f"a = {a}\n")
+ f.write(f"b = {b}\n")
+ f.write(f"c = {c}\n")
+ f.write(f"y = {y}\n")
