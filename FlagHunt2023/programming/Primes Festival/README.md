@@ -38,8 +38,7 @@ if num == secret:
 else:
   print("Nope, it's wrong!!")```
 # solve
-```
-from pwn import *
+```from pwn import *
 from tqdm import tqdm
 from Crypto.Util.number import isPrime
 
@@ -82,6 +81,4 @@ for mask in tqdm(range(1 << 23)):
 
 io.recvuntil(b': ')
 io.sendline(str(ans).encode())
-io.interactive()
-
-```
+io.interactive()```
