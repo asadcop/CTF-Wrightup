@@ -37,6 +37,8 @@ if num == secret:
   print(open('flag.txt', 'r').read())
 else:
   print("Nope, it's wrong!!")```
+
+
 # solve
 ```from pwn import *
 from tqdm import tqdm
