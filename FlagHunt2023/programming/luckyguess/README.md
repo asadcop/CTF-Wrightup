@@ -1,4 +1,4 @@
-#problem
+# problem
 ```
 #!/usr/local/bin/python
 from random import getrandbits
@@ -25,7 +25,7 @@ if x == y:
 else:
     print("sorry, you are not a true psychic... better luck next time")
 ```
-#solve 
+# solve 
 ```
 from pwn import *
 
