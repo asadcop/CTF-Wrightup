@@ -36,7 +36,8 @@ num = int(input('Enter my favorite number: '))
 if num == secret:
   print(open('flag.txt', 'r').read())
 else:
-  print("Nope, it's wrong!!")```
+  print("Nope, it's wrong!!")
+```
 
 
 # solve
